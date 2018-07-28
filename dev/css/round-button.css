@@ -1,0 +1,48 @@
+:root {
+    --ghost-btn-padding: 10px;
+    --ghost-btn-border-width: 2px;
+    --ghost-btn-border-color: #000;
+    --ghost-btn-background-color: #000;
+}
+
+.mod_ghost_btn_round {
+    position: relative;
+    padding: var(--ghost-btn-padding) calc(var(--ghost-btn-padding)/2);
+    border-top: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
+    border-bottom: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
+    border-left: solid 0px;
+    border-right: solid 0px;
+    margin: 0 calc(1em + 8px) 0 1em;
+    display: inline-block;
+    line-height: 1em;
+}
+
+.mod_ghost_btn_round:before {
+    content: '';
+    position: absolute;
+    top: -var(--ghost-btn-border-width);
+    left: calc((-1em - var(--ghost-btn-padding)*2)/2);
+    height: 100%;
+    border-left: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
+    border-top: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
+    border-bottom: solid var(--ghost-btn-border-width) transparent;
+    border-right: solid var(--ghost-btn-border-width) transparent;
+    border-radius: 50%;
+    width: calc(1em + var(--ghost-btn-padding)*2);
+    transform: rotate(-45deg);
+}
+
+.mod_ghost_btn_round:after {
+    content: '';
+    position: absolute;
+    top: -var(--ghost-btn-border-width);
+    right: calc((-1em - var(--ghost-btn-padding)*2)/2);
+    height: 100%;
+    border-left: solid var(--ghost-btn-border-width) transparent;
+    border-top: solid var(--ghost-btn-border-width) transparent;
+    border-bottom: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
+    border-right: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
+    border-radius: 50%;
+    width: calc(1em + var(--ghost-btn-padding)*2);
+    transform: rotate(-45deg);
+}
