@@ -3,13 +3,16 @@
     --ghost-btn-border-width: 2px;
     --ghost-btn-border-color: #000;
     --ghost-btn-background-color: #000;
+    --ghost-btn-round-position: calc(((-1em - var(--ghost-btn-padding)*2)/2) - var(--ghost-btn-border-width));
+    --ghost-btn-border-style: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
+    --ghost-btn-border-transparent: solid var(--ghost-btn-border-width) transparent;
 }
 
 .mod_ghost_btn_round {
     position: relative;
     padding: var(--ghost-btn-padding) calc(var(--ghost-btn-padding)/2);
-    border-top: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
-    border-bottom: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
+    border-top: var(--ghost-btn-border-style);
+    border-bottom: var(--ghost-btn-border-style);
     border-left: solid 0px;
     border-right: solid 0px;
     margin: 0 calc(1em + 8px) 0 1em;
@@ -20,13 +23,13 @@
 .mod_ghost_btn_round:before {
     content: '';
     position: absolute;
-    top: -var(--ghost-btn-border-width);
-    left: calc((-1em - var(--ghost-btn-padding)*2)/2);
+    top: calc(0px - var(--ghost-btn-border-width));
+    left: var(--ghost-btn-round-position);
     height: 100%;
-    border-left: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
-    border-top: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
-    border-bottom: solid var(--ghost-btn-border-width) transparent;
-    border-right: solid var(--ghost-btn-border-width) transparent;
+    border-left: var(--ghost-btn-border-style);
+    border-top: var(--ghost-btn-border-style);
+    border-bottom: var(--ghost-btn-border-transparent);
+    border-right: var(--ghost-btn-border-transparent);
     border-radius: 50%;
     width: calc(1em + var(--ghost-btn-padding)*2);
     transform: rotate(-45deg);
@@ -35,13 +38,13 @@
 .mod_ghost_btn_round:after {
     content: '';
     position: absolute;
-    top: -var(--ghost-btn-border-width);
-    right: calc((-1em - var(--ghost-btn-padding)*2)/2);
+    top: calc(0px - var(--ghost-btn-border-width));
+    right: var(--ghost-btn-round-position);
     height: 100%;
-    border-left: solid var(--ghost-btn-border-width) transparent;
-    border-top: solid var(--ghost-btn-border-width) transparent;
-    border-bottom: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
-    border-right: solid var(--ghost-btn-border-width) var(--ghost-btn-border-color);
+    border-left: var(--ghost-btn-border-transparent);
+    border-top: var(--ghost-btn-border-transparent);
+    border-bottom: var(--ghost-btn-border-style);
+    border-right: var(--ghost-btn-border-style);
     border-radius: 50%;
     width: calc(1em + var(--ghost-btn-padding)*2);
     transform: rotate(-45deg);
