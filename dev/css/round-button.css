@@ -15,7 +15,7 @@
     border-bottom: var(--ghost-btn-border-style);
     border-left: solid 0px;
     border-right: solid 0px;
-    margin: 0 calc(1em + 8px) 0 1em;
+    margin: 0 calc((1em + var(--ghost-btn-padding)*2 + var(--ghost-btn-border-width))/2);
     display: inline-block;
     line-height: 1em;
 }
